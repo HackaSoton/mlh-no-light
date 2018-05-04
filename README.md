@@ -11,7 +11,7 @@ docker run --name traefik -d -p 80:80 -v /var/run/docker.sock:/var/run/docker.so
 ```
 
 ```
-docker run --name nolight -d -p 8080:80 -e RACK_ENV=production -e MONGODB_URI=mongodb://xx@ds115740.mlab.com:15740/hackasoton-mlh-no-light -e MY_MLH_KEY=x -e MY_MLH_SECRET=x aluxian/mlh-no-light sh -c 'gem install bundler && bundle install && bundle exec rackup config.ru --host 0.0.0.0 -p 80'
+docker run --name nolight -d -p 8080:80 -e RACK_ENV=production -e MONGODB_URI=mongodb://x:x@x.mlab.com:15740/x -e MY_MLH_KEY=x -e MY_MLH_SECRET=x aluxian/mlh-no-light sh -c 'gem install bundler && bundle install && bundle exec rackup config.ru --host 0.0.0.0 -p 80'
 ```
 
 ## FAQ
