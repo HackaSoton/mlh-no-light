@@ -4,6 +4,10 @@ This is a **micro service** that allows participants of the No Light mini-event 
 
 [![CircleCI](https://circleci.com/gh/MLH/mlh-no-light.svg?style=svg)](https://circleci.com/gh/MLH/mlh-no-light)
 
+## HackaSoton install
+
+`docker run --rm -p 8080:80 -e RACK_ENV=production -e MONGODB_URI=mongodb://x:x@ds115740.mlab.com:15740/hackasoton-mlh-no-light -e MY_MLH_KEY=xx -e MY_MLH_SECRET=xx mlh-no-light sh -c 'gem install bundler && bundle install && bundle exec rackup config.ru --host 0.0.0.0 -p 80'`
+
 ## FAQ
 
 ### What is No Light?
