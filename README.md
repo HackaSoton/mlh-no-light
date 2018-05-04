@@ -11,7 +11,11 @@ docker run --name traefik -d -p 80:80 -v /var/run/docker.sock:/var/run/docker.so
 ```
 
 ```
-docker run --name nolight -d -p 8080:80 -e RACK_ENV=production -e MONGODB_URI=mongodb://x:x@x.mlab.com:15740/x -e MY_MLH_KEY=x -e MY_MLH_SECRET=x aluxian/mlh-no-light sh -c 'gem install bundler && bundle install && bundle exec rackup config.ru --host 0.0.0.0 -p 80'
+docker run --name nolight -d -e RACK_ENV=production -e MONGODB_URI=mongodb://x:x@x.mlab.com:15740/x -e MY_MLH_KEY=x -e MY_MLH_SECRET=x aluxian/mlh-no-light sh -c 'gem install bundler && bundle install && bundle exec rackup config.ru --host 0.0.0.0 -p 80'
+```
+
+```
+docker run --name slack -d -e SERVER_REDIRECT=join.slack.com -e SERVER_REDIRECT_PATH=/t/123/shared_invite/123 -e SERVER_REDIRECT_SCHEME=https schmunk42/nginx-redirect
 ```
 
 ## FAQ
