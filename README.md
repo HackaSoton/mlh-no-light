@@ -6,7 +6,13 @@ This is a **micro service** that allows participants of the No Light mini-event 
 
 ## HackaSoton install
 
-`docker run --rm -p 8080:80 -e RACK_ENV=production -e MONGODB_URI=mongodb://x:x@ds115740.mlab.com:15740/hackasoton-mlh-no-light -e MY_MLH_KEY=xx -e MY_MLH_SECRET=xx mlh-no-light sh -c 'gem install bundler && bundle install && bundle exec rackup config.ru --host 0.0.0.0 -p 80'`
+```
+docker run --name traefik -d -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock traefik --docker --docker.watch --docker.domain=hackthesouth.co.uk --loglevel=INFO
+```
+
+```
+docker run --name nolight -d -p 8080:80 -e RACK_ENV=production -e MONGODB_URI=mongodb://hackasoton:hackasotonhackasoton@ds115740.mlab.com:15740/hackasoton-mlh-no-light -e MY_MLH_KEY=1f84a3586de2a325588728e3f9f32e6ce008d235738196e7fbb07c96df3126e3 -e MY_MLH_SECRET=4327a476b25db375aae08074530cbaeb0dcaba99fe0f2bda0358ef9bfa88260a aluxian/mlh-no-light sh -c 'gem install bundler && bundle install && bundle exec rackup config.ru --host 0.0.0.0 -p 80'
+```
 
 ## FAQ
 
